@@ -35,7 +35,7 @@ jobs:
       - checkout
       - restrore_cache:
           key: "myCache"
-      - run: npm i
+      - #run: npm i
       - run: npm audit
       
 workflows:
