@@ -33,7 +33,7 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-      - restrore_cache:
+      - restore_cache:
           key: "myCache"
       - run: npm audit
       
