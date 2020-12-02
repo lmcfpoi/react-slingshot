@@ -23,7 +23,7 @@ jobs:
     steps:
       - checkout
       - run: npm i
-      - restrore_cache:
+      - restore_cache:
           key: "myCache"
       - run: npm i
       - run: npm run test
