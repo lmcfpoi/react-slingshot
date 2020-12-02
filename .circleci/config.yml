@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      image: circleci/node:13.8.0
+      - image: circleci/node:13.8.0
     steps:
       # Checkout code over SSH, not HTTPS
       - checkout
@@ -19,7 +19,7 @@ jobs:
 
   test:
     docker:
-      image: circleci/node:13.8.0
+      - image: circleci/node:13.8.0
     steps:
       - checkout
       - run: npm i
@@ -30,7 +30,7 @@ jobs:
 
   analyze:
     docker:
-      image: circleci/node:13.8.0
+      - image: circleci/node:13.8.0
     steps:
       - checkout
       - restrore_cache:
