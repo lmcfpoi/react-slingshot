@@ -7,9 +7,11 @@ jobs:
     steps:
       # Run the infra cloudformation script
       - run: 
-          aws cloudformation create-stack --stack-name $AWS_STACK_NAME \ 
+          aws cloudformation create-stack \
+          --stack-name $AWS_STACK_NAME \ 
           --template-body file://lmcfpoi/react-slingshot/.circleci/template.yml \ 
-          --capabilities CAPABILITY_IAM --region $AWS_DEFAULT_REGION
+          --capabilities CAPABILITY_IAM \ 
+          --region $AWS_DEFAULT_REGION
       
 workflows:
   myworkflow:
