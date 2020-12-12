@@ -5,20 +5,20 @@ jobs:
     docker:
       - image: amazon/aws-cli
     params:
-      aws-access-key-id:
-        default: AWS_ACCESS_KEY_ID
-        description: |
-          AWS access key id for IAM role. Set this to the name of
-          the environment variable you will use to hold this
-          value, i.e. AWS_ACCESS_KEY.
-        type: env_var_name
-      aws-secret-access-key:
-        default: AWS_SECRET_ACCESS_KEY
-        description: |
-          AWS access key id for IAM role. Set this to the name of
-          the environment variable you will use to hold this
-          value, i.e. AWS_ACCESS_KEY.
-        type: env_var_name
+      # aws-access-key-id:
+      #   default: AWS_ACCESS_KEY_ID
+      #   description: |
+      #     AWS access key id for IAM role. Set this to the name of
+      #     the environment variable you will use to hold this
+      #     value, i.e. AWS_ACCESS_KEY.
+      #   type: env_var_name
+      # aws-secret-access-key:
+      #   default: AWS_SECRET_ACCESS_KEY
+      #   description: |
+      #     AWS access key id for IAM role. Set this to the name of
+      #     the environment variable you will use to hold this
+      #     value, i.e. AWS_ACCESS_KEY.
+      #   type: env_var_name
       aws-stack_name:
         default: AWS_STACK_NAME
         description: |
@@ -33,7 +33,7 @@ jobs:
       # Run the infra cloudformation script
       - run:
         command: |
-          aws cloudformation create-stack --stack-name <<parameters.aws-stack-name>> --template-body file://lmcfpoi/react-slingshot/.circleci/template.yml --capabilities CAPABILITY_IAM --region <<parameters.aws-stack-name>>
+          aws cloudformation create-stack --stack-name <<parameters.aws-stack-name>> --template-body file://lmcfpoi/react-slingshot/.circleci/template.yml --capabilities "CAPABILITY_IAM" --region <<parameters.aws-stack-name>>
       
 workflows:
   myworkflow:
