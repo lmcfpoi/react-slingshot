@@ -30,7 +30,7 @@ jobs:
           AWS region stie
         type: env_var_name
     steps:
-      # Run the infra cloudformsation scripttttt
+      # Run the infra cloudformsation scriptttttt
       - run:
           aws cloudformation create-stack \ 
           --stack-name $AWS_STACK_NAME \
