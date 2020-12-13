@@ -4,7 +4,7 @@ jobs:
   create_infrastructure:
     docker:
       - image: amazon/aws-cli
-    params:
+    #params:
       # aws-access-key-id:
       #   default: AWS_ACCESS_KEY_ID
       #   description: |
@@ -19,19 +19,20 @@ jobs:
       #     the environment variable you will use to hold this
       #     value, i.e. AWS_ACCESS_KEY.
       #   type: env_var_name
-      aws-stack_name:
-        default: AWS_STACK_NAME
-        description: |
-          AWS Stack name stie
-        type: env_var_name
-      aws-default_region:
-        default: AWS_DEFAULT_REGION
-        description: |
-          AWS region stie
-        type: env_var_name
+      # # aws-stack_name:
+      # #   default: AWS_STACK_NAME
+      # #   description: |
+      # #     AWS Stack name stie
+      # #   type: env_var_name
+      # # aws-default_region:
+      # #   default: AWS_DEFAULT_REGION
+      # #   description: |
+      # #     AWS region stie
+      # #   type: env_var_name
     steps:
-      # Run the infra cloudformsation scriptttttt
       - run:
+        name: "Create my AWS stack tabarnac...."
+        command: |
           aws cloudformation create-stack \ 
           --stack-name $AWS_STACK_NAME \
           --template-body file://lmcfpoi/react-slingshot/.circleci/template.yml \
