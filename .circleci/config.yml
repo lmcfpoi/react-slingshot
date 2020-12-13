@@ -32,7 +32,7 @@ jobs:
     steps:
       - run:
           name: "Create my AWS stack tabarnac...."
-          command: 
+          command: |
             aws cloudformation create-stack --stack-name $AWS_STACK_NAME --template-body git-url:https://github.com/lmcfpoi/react-slingshot/tree/master/.circleci/template.yml --capabilities "CAPABILITY_IAM" --region $AWS_DEFAULT_REGION
       
 workflows:
