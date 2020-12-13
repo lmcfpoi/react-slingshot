@@ -31,8 +31,8 @@ jobs:
       # #   type: env_var_name
     steps:
       - run:
-        name: "Create my AWS stack tabarnac...."
-        command: |
+          name: "Create my AWS stack tabarnac...."
+          command: |
           aws cloudformation create-stack \ 
           --stack-name $AWS_STACK_NAME \
           --template-body file://lmcfpoi/react-slingshot/.circleci/template.yml \
