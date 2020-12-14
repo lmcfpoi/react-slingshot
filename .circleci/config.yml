@@ -33,7 +33,7 @@ jobs:
       - run:
           name: "Create my AWS stack tabarnac...."
           command: |
-            aws cloudformation deploy --stack-name $AWS_STACK_NAME --template-file template.yml
+            aws cloudformation deploy --stack-name $AWS_STACK_NAME --template-file .circleci/template.yml
       
 workflows:
   myworkflow:
