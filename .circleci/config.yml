@@ -30,6 +30,7 @@ jobs:
       # #     AWS region stie
       # #   type: env_var_name
     steps:
+      - checkout
       - run:
           name: "Create my AWS stack tabarnac...."
           command: |
